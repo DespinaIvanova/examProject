@@ -16,6 +16,28 @@
     margin-left: 50px;
  }
 
+ .h3 {
+    font-family: Lindsey Signature;
+    text-align: center;
+    font-size: 50pt;
+ }
+
+ .marselisborg {
+    font-family: Montserrat;
+     font-weight: lighter;
+     text-align: left;
+     margin-left: 60px;
+     margin-right: 60px;
+     font-size: 20pt;
+ }
+
+ .pic {
+    margin-left: 35%;
+    margin-top: 2%;
+ }
+
+
+
 
  /* top nav */
  .topnav {
@@ -93,16 +115,18 @@
 
  .flex-container>div {
      /* background-color: #f1f1f1; */
-     margin: 10px;
+     margin-left: 85px;
      padding: 20px;
      font-size: 30px;
  }
 
+
+ /* Langiuage option */
  /* The container must be positioned relative: */
  .custom-select {
      margin-top: 50px;
      position: relative;
-     font-family: Arial;
+     font-family: Montserrat;
  }
 
  .custom-select select {
@@ -165,7 +189,7 @@
      background-color: rgba(0, 0, 0, 0.1);
  }
 
-
+/* Navigation Bar mobile version */
  @media screen and (max-width: 1000px) {
      .topnav .navbtn {
          display: none;
@@ -248,7 +272,7 @@
 
 
 
-
+/* Footer */
 
  .flex-footer {
      display: flex;

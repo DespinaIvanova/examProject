@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./marselisborg.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
+    <style>
+      #map { height: 400px; }
+      .arrowFlex {
+          display: flex;
+      }
+
+      .arrow {
+          margin-left: 125px;
+          margin-bottom: -100px;
+
+      }
+
+     
+      @media screen and (max-width: 1000px) {
+          .read {
+              margin-left: 0px;
+          }
+
+          .arrow {
+              margin-left: 5px;
+          }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Menu: partly hidden or displayed -->
+
+    <div class="topnav" id="myTopnav">
+      <a href="#home" class="active navbtn" id="home">About Me</a>
+      <a href="#news" class="navbtn">About Aarhus</a>
+      <a href="#contact" class="navbtn">Explore</a>
+      <a href="#logo" class="logo">
+        <img src="images/logo.png"/>
+      </a>
+      <a href="#about" class="navbtn">Forum</a>
+      <a href="#about" class="navbtn">Help</a>
+      <div class="custom-select" style="width:120px;">
+      <select name="Lannguages" id="languages">
+        <option value="EN">English</option>
+        <option value="EN">English</option>
+        <option value="DK">Danish</option>
+      </select>
+    </div>
+      <a href="javascript:void(0);" class="icon navbtn" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+      <script>
+        var x, i, j, l, ll, selElmnt, a, b, c;
+        /*look for any elements with the class "custom-select":*/
+        x = document.getElementsByClassName("custom-select");
+        l = x.length;
+        for (i = 0; i < l; i++) {
+          selElmnt = x[i].getElementsByTagName("select")[0];
+          ll = selElmnt.length;
+          /*for each element, create a new DIV that will act as the selected item:*/
+          a = document.createElement("DIV");
+          a.setAttribute("class", "select-selected");
+          a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+          x[i].appendChild(a);
+          /*for each element, create a new DIV that will contain the option list:*/
+          b = document.createElement("DIV");
+          b.setAttribute("class", "select-items select-hide");
+          for (j = 1; j < ll; j++) {
+            /*for each option in the original select element,
+            create a new DIV that will act as an option item:*/
+            c = document.createElement("DIV");
+            c.innerHTML = selElmnt.options[j].innerHTML;
+            c.addEventListener("click", function(e) {
+                /*when an item is clicked, update the original select box,
+                and the selected item:*/
+                var y, i, k, s, h, sl, yl;
+                s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                sl = s.length;
+                h = this.parentNode.previousSibling;
+                for (i = 0; i < sl; i++) {
+                  if (s.options[i].innerHTML == this.innerHTML) {
+                    s.selectedIndex = i;
+                    h.innerHTML = this.innerHTML;
+                    y = this.parentNode.getElementsByClassName("same-as-selected");
+                    yl = y.length;
+                    for (k = 0; k < yl; k++) {
+                      y[k].removeAttribute("class");
+                    }
+                    this.setAttribute("class", "same-as-selected");
+                    break;
+                  }
+                }
+                h.click();
+            });
+            b.appendChild(c);
+          }
+          x[i].appendChild(b);
+          a.addEventListener("click", function(e) {
+              /*when the select box is clicked, close any other select boxes,
+              and open/close the current select box:*/
+              e.stopPropagation();
+              closeAllSelect(this);
+              this.nextSibling.classList.toggle("select-hide");
+              this.classList.toggle("select-arrow-active");
+            });
+        }
+        function closeAllSelect(elmnt) {
+          /*a function that will close all select boxes in the document,
+          except the current select box:*/
+          var x, y, i, xl, yl, arrNo = [];
+          x = document.getElementsByClassName("select-items");
+          y = document.getElementsByClassName("select-selected");
+          xl = x.length;
+          yl = y.length;
+          for (i = 0; i < yl; i++) {
+            if (elmnt == y[i]) {
+              arrNo.push(i)
+            } else {
+              y[i].classList.remove("select-arrow-active");
+            }
+          }
+          for (i = 0; i < xl; i++) {
+            if (arrNo.indexOf(i)) {
+              x[i].classList.add("select-hide");
+            }
+          }
+        }
+        /*if the user clicks anywhere outside the select box,
+        then close all select boxes:*/
+        document.addEventListener("click", closeAllSelect);
+        </script>
+  
+  </div>
+
+ 
+
+    
+     
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+
+    <img class="backgroundimg"
+      src="images/2nd.png"
+      height="1080px"
+      width="1920px"
+    />
+<!-- First section -->
+    <div>
+      <h3 class="h3">A history within a place</h3>
+      <p class="marselisborg">I place taken out of the old Medieval books is how I would describe it. Marselisborg - a place of history, picturesque views and a feeling of greatness. The place is said to be the summer and Christmas residence of the Danish royal family. During the time they reside it, you are not allowed to enter it. I was lucky and got there some time before Her Majesty - Queen Margrethe has arrived for the Christmas holidays.</p>
+      <img src="/images/m14.png" class="pic">
+      <p class="marselisborg">Without even exaggerating the place felt like one of those of my dreams. The Scandinavian vibe is also on point and could easily be sensed in Marselisborg. 
+
+        I did not even suspect to stumble upon such a place in Aarhus. My curiosity was what led me to it and here I am captivated by it, encouraging others to go ASAP. 
+        
+        To start with, the place is located in Kongevejen 100, 8000 Aarhus C. This might make no sense to you but what you really need to know is that it is not far from the city center (from 12 to 20 minutes by bus). 
+        
+        The place is also situated quite near the sea line and you can easily notice it when you are there. </p>
+        <img src="/images/m15.png" class="pic">
+        <p class="marselisborg">The weather in Denmark in December is not the best, that’s why the day I chose to go was pretty cloudy and cold but this did not stop me from conquering the place! I went there by bus (taking 17 - check out available busses …). 
+
+          I travelled approximately 17 minutes from Aarhus S, which is pretty much the southern part of the city. The bus stop I was taken to is placed right in front of the Palace so I did not have to walk a lot. </p>
+          
+         <p class="marselisborg"> Near the Palace there is a really nice-looking park which I couldn’t visit as I was to excited for the Palace itself. 
+          
+          Getting in front of the gates gave me goosebumps as even there you can sense the superiority of the place. 
+          
+          What really stunned me once I entered were all the extraordinary statues placed right in front of the palace in the evergreen grass field, which is also ginormous. 
+          
+          Turning around to see the palace from where I was, unveiled a view I fell in love with. </p>
+   
+    </div>
+
+    <div class="flex-container">
+      <div>
+        <img src="/images/m1.png">
+      </div>
+      <div>
+        <img src="/images/m2.png">
+      </div>
+      <div>
+        <img src="/images/m3.png">
+      </div>  
+    </div>
+
+    <div>
+      <p class="marselisborg">A statue of a ‘løve’ (translated: lion) is the next thing I glimpsed after the few minutes during which I could not take my eyes off the palace. 
+
+        What I realized afterwards, however, was that it’s not just a single statue of a lion, instead it’s three of them, as well as nine grass hearts. 
+        
+        Walking around the place, trying to see as much as possible I was led to a tiny pond near which there was a statue of a kid kneeing above it. 
+        
+        For a split second I forgot what season we were as the pond was colored in autumn colors (it’s winter… or late autumn?). 
+        
+        </p>
+    </div>
+    <div class="flex-container">
+      <div>
+        <img src="/images/m7.png">
+      </div>
+      <div>
+        <img src="/images/m8.png">
+      </div>
+  
+    </div>
+
+    <div>
+      <p class="marselisborg">Anyways, now that I saw the front façade of the palace I wanted to see what is hidden in the back. Well, it was a lot more than I thought. Artistically weird statues as well as the most gorgeous garden I have seen. 
+
+        As I was going farther from the palace and deeper in the gigantic garden I would be exposed to even more symbolic statues as well as a magical narrow path leading to a tiny pond with a few geese floating peacefully in it. </p>
+    </div>
+
+    <div class="flex-container">
+      <div>
+        <img src="/images/m10.png">
+      </div>
+      <div>
+        <img src="/images/m11.png">
+      </div>
+      <div>
+        <img src="/images/m12.png">
+      </div>  
+    </div>
+
+    <div>
+      <p class="marselisborg">I couldn’t help it but take a picture of myself standing in front of the Castle so that I can remind myself the gorgeousness of Marselisborg and all its wonders. 
+
+      </p>
+    </div>
+
+    <div>
+      <img src="/images/m13.png" class="pic">
+      <p class="marselisborg">Add the Marselisborg Castle to your bucket list and don’t forget to visit it next time you decide to visit Aarhus!
+      </p>
+      <h4 class="h4">Published on 18/12/2022, 12:30</h4>
+    </div>
+
+<script>
+
+  // initialize the map on the "map" div with a given center and zoom
+var map = L.map('map', {
+    center: [56.127842278867256, 10.202755030736265],
+    zoom: 13
+});
+
+    </script>
+
+
+<div id="map"></div>
+
+<script>
+  var map = L.map('map').setView([56.1278027,10.2006122], 16);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+var marker = L.marker([56.1278027,10.2006122]).addTo(map);
+</script>
+
+
+
+
+
+  
+
+   
+
+     
+
+     
+
+       
+
+
+
+<!-- Footer -->
+
+    <div class="flex-footer">
+      <div class="vertical-text">
+        <p>
+          Copyright 2022 | Despina Ivanova All rights reserved | Privacy policy
+          Terms and conditions
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="#test">About Me</a>
+
+        <a href="#test">About Aarhus</a>
+        <a href="#test">Explore</a>
+      </div>
+      <div class="footer-links">
+        <a href="#test">Forum</a>
+        <a href="#test">Settings</a>
+        <a href="#test">Help</a>
+      </div>
+      <div class="footer-links">
+        <a href="#test"><img src="/images/facebook(2).png" height="90px" width="90px" alt=""></a>
+      </div>
+      <div class="footer-links">
+        <a href="#test"><img src="/images/instagram(2).png" heigt="90px" width="90px" alt=""></a>
+      </div>
+    </div>
+  </body>
+</html>

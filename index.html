@@ -10,6 +10,48 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <style>
+      .arrowFlex{
+        display: flex;
+      }
+      .arrow {
+        margin-left: 125px;
+        margin-bottom: -100px ;
+       
+      }
+      .read{ 
+        font-size: 15pt;
+        font-weight: bold;
+        margin-left: 80px;
+        margin-top: 30px;
+      }
+
+      .Chapter {
+        text-align:center;
+        margin-bottom: 5px;
+      }
+      
+        .Me {
+          font-family: Lindsey Signature;
+          font-size: 50pt;
+          text-align: center;
+        }
+
+        .Guide {
+          font-family: Lindsey Signature;
+          font-size: 30pt;
+          margin-left: 80px;
+        }
+
+      @media screen and (max-width: 1000px) {
+        .read{
+          margin-left: 0px;
+        }
+        .arrow {
+          margin-left: 5px;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Menu: partly hidden or displayed -->
@@ -142,61 +184,25 @@
 
     <div>
       
-      <p id = "Chapter">CHAPTER 1</p>
-      <style>
-        #Chapter {
-          text-align:center;
-          margin-bottom: 5px;
-        }
-      </style>
+      <p class="Chapter">CHAPTER 1</p>
+
     
       <h1 id="Me">About Me</h1>
-      <style>
-        #Me {
-          font-family: Lindsey Signature;
-          font-size: 50pt;
-          text-align: center;
-        }
-      </style>
+
     </div>
 
   
 
     <div class="flex">
       <div>
-        <h3 id="Guide">Your guide</h3>
-        <style>
-          #Guide {
-            font-family: Lindsey Signature;
-            font-size: 30pt;
-            margin-left: 80px;
-          }
-        </style>
-        <p id="paragraph">My name is Despina Ivanova (Desi). I have been living in Aarhus for some time now but I have not yet explored the beauty and mystery of the city. Join me on my journey while sharing with you all the interesting places I have discovered while strolling and eating Danish pastries.</p>
-        <style>
-          #paragraph {
-            font-weight: lighter;
-            font-size: 15pt;
-            margin-left: 80px;
-          }
-          </style>
-          <p id="read">READ MORE</p>
-          <style>
-            #read{ 
-              font-size: 15pt;
-              font-weight: bold;
-              margin-left: 80px;
-              margin-top: 30px;
-            }
-          </style>
-          <p id="arrow"><img src="/images/right-arrow(2).png" height="25px" weight="25px"></i></p>
-          <style>
-            #arrow {
-              margin-left: 125px;
-              margin-bottom: -100px ;
-             
-            }
-          </style>
+        <h3 class="Guide">Your guide</h3>
+        <p class="paragraph">My name is Despina Ivanova (Desi). I have been living in Aarhus for some time now but I have not yet explored the beauty and mystery of the city. Join me on my journey while sharing with you all the interesting places I have discovered while strolling and eating Danish pastries.</p>
+          <div class="arrowFlex">
+          <p class="read">READ MORE</p>
+
+          <p class="arrow"><img src="/images/right-arrow(2).png" height="25px" weight="25px"></i></p>
+        </div>
+
       </div>
       <div><img src="/images/Component 25 – 1.png" height="600px" width="600px"></div>
       </div>
@@ -205,65 +211,30 @@
 
         <!-- Second Section -->
       
-        <p id = "Chapter">CHAPTER 2</p>
-        <style>
-          #Chapter {
-            text-align:center;
-            margin-bottom: 5px;
-          }
-        </style>
+        <p class="Chapter">CHAPTER 2</p>
+
       
         <h1 id="Me">About Aarhus</h1>
-        <style>
-          #Me {
-            font-family: Lindsey Signature;
-            font-size: 50pt;
-            text-align: center;
-          }
-        </style>
+
       </div>
 
      
 
       <div class="container">
         <div>
-          <h3 id="Guide">Aarhus - the city of smiles</h3>
-          <style>
-            #Guide {
-              font-family: Lindsey Signature;
-              font-size: 30pt;
-              margin-left: 80px;
-            }
-          </style>
-          <p id="paragraph">Aarhus is a city that has a lot to offer to everyone 
+          <h3 class="Guide">Aarhus - the city of smiles</h3>
+          <p class="paragraph">Aarhus is a city that has a lot to offer to everyone 
             - from young to elderly. It is a city, as I like to call 
             it, of diversity - from tiny Scandinavian houses 
             defining the so-called ‘hygge’ to large modern 
             buildings near the sea promenade. </p>
-          <style>
-            #paragraph {
-              font-weight: lighter;
-              font-size: 15pt;
-              margin-left: 80px;
-            }
-            </style>
-            <p id="read">READ MORE</p>
-            <style>
-              #read{ 
-                font-size: 15pt;
-                font-weight: bold;
-                margin-left: 80px;
-                margin-top: 30px;
-              }
-            </style>
-            <p id="arrow"><img src="/images/right-arrow(2).png" height="25px" width="25px"></p>
-            <style>
-              #arrow {
-                margin-left: 125px;
-                margin-bottom: -100px ;
-               
-              }
-            </style>
+
+            <div class="arrowFlex">
+              <p class="read">READ MORE</p>
+    
+              <p class="arrow"><img src="/images/right-arrow(2).png" height="25px" weight="25px"></i></p>
+            </div>
+
         </div>
         <div><img src="/images/aarhus.png" height="555.27px" width="855.21px"></div>
         </div>
@@ -275,22 +246,10 @@
 
        <div>
       
-        <p id = "Chapter">CHAPTER 3</p>
-        <style>
-          #Chapter {
-            text-align:center;
-            margin-bottom: 5px;
-          }
-        </style>
+        <p class="Chapter">CHAPTER 3</p>
       
         <h1 id="Me">Hidden gems</h1>
-        <style>
-          #Me {
-            font-family: Lindsey Signature;
-            font-size: 50pt;
-            text-align: center;
-          }
-        </style>
+
       </div>
 
       <div class="flex-container">

@@ -5,12 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./aarhus.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
     <style>
+      #map { height: 400px; }
       .arrowFlex {
           display: flex;
       }
@@ -21,30 +28,7 @@
 
       }
 
-      .read {
-          font-size: 15pt;
-          font-weight: bold;
-          margin-left: 80px;
-          margin-top: 30px;
-      }
-
-      .Chapter {
-          text-align: center;
-          margin-bottom: 5px;
-      }
-
-      .Me {
-          font-family: Lindsey Signature;
-          font-size: 50pt;
-          text-align: center;
-      }
-
-      .Guide {
-          font-family: Lindsey Signature;
-          font-size: 30pt;
-          margin-left: 80px;
-      }
-
+     
       @media screen and (max-width: 1000px) {
           .read {
               margin-left: 0px;
@@ -63,7 +47,7 @@
       <a href="#home" class="active navbtn" id="home">About Me</a>
       <a href="#news" class="navbtn">About Aarhus</a>
       <a href="#contact" class="navbtn">Explore</a>
-      <a href="/home.html" class="logo">
+      <a href="./home.html" class="logo">
         <img src="images/logo.png"/>
       </a>
       <a href="#about" class="navbtn">Forum</a>
@@ -178,94 +162,75 @@
     </script>
 
     <img class="backgroundimg"
-      src="images/1st.png"
+      src="/images/Component 35 – 1.png"
       height="1080px"
       width="1920px"
     />
 
-<!-- First Section -->
-
     <div>
-      
-      <p class="Chapter">CHAPTER 1</p>
+    <h3 class="h3">The Scandinavian street</h3>
+    <p class="marselisborg">I come from a place which is situated quite near the sea. I guess that’s the main reason for me loving the sea so much and find myself at peace while being near it. 
+
+        I love the sound of the waves, the smell of the salty water and the blue colors. I believe that I am thankful for having the sea at my exposal whenever I want to, here in Aarhus. 
+        
+        Here is an interesting fact, no matter where exactly in Denmark you are you'll never be more than 52km from the ocean. I love Denmark because of that (and because of many more). </p>
+        <p class="marselisborg">
+            Aarhus Ø is the place where you can go and gaze at the sea as much as you want as this is one of the few places where you can get exposed to the beauty of the ocean. 
+
+Not only is there a sea promenade, but also plenty of astonishing buildings which you can see nowhere but there. Aarhus Ø gives you a different perspective of the city, making it even more diverse and colorful. 
+
+All the modern futuristic buildings dangling above the promenade, the boats on the harbor, the tiny basins used by many during summer time and the tiny restaurants and cafes is what make Aarhus Ø one of the hidden gems of Aarhus. 
+        </p>
+    </div>
+
+    <div class="flex-container">
+        <div>
+          <img src="/images/2.png">
+        </div>
+        <div>
+          <img src="/images/4.png">
+        </div>
+        <div>
+          <img src="/images/7.png">
+        </div>  
+      </div>
+  
 
     
-      <h1 id="Me">About Me</h1>
+<!-- Map -->
+        <div id="map"></div>
+      
 
-    </div>
+<script>
+
+  // initialize the map on the "map" div with a given center and zoom
+
+
+  var map = L.map('map').setView([56.14309036877043, 10.23206226149911], 16);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+var marker = L.marker([56.14309036877043, 10.23206226149911]).addTo(map);
+</script>
+
+
+
+
 
   
 
-    <div class="flex">
-      <div>
-        <h3 class="Guide">Your guide</h3>
-        <p class="paragraph">My name is Despina Ivanova (Desi). I have been living in Aarhus for some time now but I have not yet explored the beauty and mystery of the city. Join me on my journey while sharing with you all the interesting places I have discovered while strolling and eating Danish pastries.</p>
-          <div class="arrowFlex">
-          <p class="read">READ MORE</p>
-
-          <p class="arrow"><img src="/images/right-arrow(2).png" height="25px" weight="25px"></i></p>
-        </div>
-
-      </div>
-      <div><img src="/images/Component 25 – 1.png" height="600px" width="600px"></div>
-      </div>
-
-      <div>
-
-        <!-- Second Section -->
-      
-        <p class="Chapter">CHAPTER 2</p>
-
-      
-        <h1 id="Me">About Aarhus</h1>
-
-      </div>
+   
 
      
 
-      <div class="container">
-        <div>
-          <h3 class="Guide">Aarhus - the city of smiles</h3>
-          <p class="paragraph">Aarhus is a city that has a lot to offer to everyone 
-            - from young to elderly. It is a city, as I like to call 
-            it, of diversity - from tiny Scandinavian houses 
-            defining the so-called ‘hygge’ to large modern 
-            buildings near the sea promenade. </p>
+     
 
-            <div class="arrowFlex">
-              <p class="read">READ MORE</p>
-    
-              <p class="arrow"><img src="/images/right-arrow(2).png" height="25px" weight="25px"></i></p>
-            </div>
-
-        </div>
-        <div><img src="/images/aarhus.png" height="555.27px" width="855.21px"></div>
-        </div>
-  
-        
-       </div>
-
-       <!-- Third Section -->
-
-       <div>
-      
-        <p class="Chapter">CHAPTER 3</p>
-      
-        <h1 id="Me">Hidden gems</h1>
-        
-
-      </div>
-
-      <div class="flex-container">
-        <div><a href="./marselisborg.html"><img src="/images/Component 29 – 1.png" height="420px" width="420px"></a></div>
-         <div><a href="./mollestien.html"><img src="/images/Component 27 – 1.png" height="420px" width="420px" alt=""></a></div>
-        <div><a href="./aarhus.html"><img src="/images/Component 28 – 1.png" height="420px" width="420px" alt=""></a></div>  
-      </div>
+       
 
 
 
-
-
+<!-- Footer -->
 
     <div class="flex-footer">
       <div class="vertical-text">

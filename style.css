@@ -12,7 +12,7 @@
     font-size: 50pt;
  }
 
- .p{
+ .paragraph{
     margin-left: 50px;
  }
 
@@ -115,8 +115,8 @@
 
  .flex-container>div {
      /* background-color: #f1f1f1; */
-     margin-left: 85px;
-     padding: 20px;
+     
+     padding: 40px;
      font-size: 30px;
  }
 

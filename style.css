@@ -1,11 +1,20 @@
  body {
      margin: 0;
      font-family: Montserrat;
-     font-weight: bold;
+     font-weight: lighter;
      background-color: #EBE5DD;
 
  }
 
+ h1 {
+    font-family: Lindsey Signature;
+    text-align: center;
+    font-size: 50pt;
+ }
+
+ .p{
+    margin-left: 50px;
+ }
 
 
  /* top nav */
@@ -165,7 +174,7 @@
      .topnav {
          display: grid;
          grid-template-columns: 40% 40% 20%;
-         width:100%;
+         width: 100%;
      }
 
      .topnav.responsive {
@@ -214,7 +223,7 @@
      .topnav .navbtn {
          grid-column-start: 1;
          grid-column-end: 4;
-         padding:30px 20px;
+         padding: 30px 20px;
      }
 
      .custom-select {
@@ -223,13 +232,14 @@
 
      }
 
-     .flex-container{
-        flex-direction: column-reverse;
+     .flex-container {
+         flex-direction: column-reverse;
      }
 
      .custom-select {
-        margin-top: 25px;
+         margin-top: 25px;
      }
+
      /* margin-left: 500px; */
  }
 
@@ -322,3 +332,5 @@
          min-height: 200px;
      }
  } */
+
+

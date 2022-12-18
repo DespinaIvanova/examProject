@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- Menu: partly hidden or displayed -->
+
+    <div class="topnav" id="myTopnav">
+      <a href="#home" class="active navbtn" id="home">About Me</a>
+      <a href="#news" class="navbtn">About Aarhus</a>
+      <a href="#contact" class="navbtn">Explore</a>
+      <a href="#logo" class="logo">
+        <img src="images/logo.png"/>
+      </a>
+      <a href="#about" class="navbtn">Forum</a>
+      <a href="#about" class="navbtn">Help</a>
+      <div class="custom-select" style="width:120px;">
+      <select name="Lannguages" id="languages">
+        <option value="EN">English</option>
+        <option value="EN">English</option>
+        <option value="DK">Danish</option>
+      </select>
+    </div>
+      <a href="javascript:void(0);" class="icon navbtn" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+      <script>
+        var x, i, j, l, ll, selElmnt, a, b, c;
+        /*look for any elements with the class "custom-select":*/
+        x = document.getElementsByClassName("custom-select");
+        l = x.length;
+        for (i = 0; i < l; i++) {
+          selElmnt = x[i].getElementsByTagName("select")[0];
+          ll = selElmnt.length;
+          /*for each element, create a new DIV that will act as the selected item:*/
+          a = document.createElement("DIV");
+          a.setAttribute("class", "select-selected");
+          a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+          x[i].appendChild(a);
+          /*for each element, create a new DIV that will contain the option list:*/
+          b = document.createElement("DIV");
+          b.setAttribute("class", "select-items select-hide");
+          for (j = 1; j < ll; j++) {
+            /*for each option in the original select element,
+            create a new DIV that will act as an option item:*/
+            c = document.createElement("DIV");
+            c.innerHTML = selElmnt.options[j].innerHTML;
+            c.addEventListener("click", function(e) {
+                /*when an item is clicked, update the original select box,
+                and the selected item:*/
+                var y, i, k, s, h, sl, yl;
+                s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                sl = s.length;
+                h = this.parentNode.previousSibling;
+                for (i = 0; i < sl; i++) {
+                  if (s.options[i].innerHTML == this.innerHTML) {
+                    s.selectedIndex = i;
+                    h.innerHTML = this.innerHTML;
+                    y = this.parentNode.getElementsByClassName("same-as-selected");
+                    yl = y.length;
+                    for (k = 0; k < yl; k++) {
+                      y[k].removeAttribute("class");
+                    }
+                    this.setAttribute("class", "same-as-selected");
+                    break;
+                  }
+                }
+                h.click();
+            });
+            b.appendChild(c);
+          }
+          x[i].appendChild(b);
+          a.addEventListener("click", function(e) {
+              /*when the select box is clicked, close any other select boxes,
+              and open/close the current select box:*/
+              e.stopPropagation();
+              closeAllSelect(this);
+              this.nextSibling.classList.toggle("select-hide");
+              this.classList.toggle("select-arrow-active");
+            });
+        }
+        function closeAllSelect(elmnt) {
+          /*a function that will close all select boxes in the document,
+          except the current select box:*/
+          var x, y, i, xl, yl, arrNo = [];
+          x = document.getElementsByClassName("select-items");
+          y = document.getElementsByClassName("select-selected");
+          xl = x.length;
+          yl = y.length;
+          for (i = 0; i < yl; i++) {
+            if (elmnt == y[i]) {
+              arrNo.push(i)
+            } else {
+              y[i].classList.remove("select-arrow-active");
+            }
+          }
+          for (i = 0; i < xl; i++) {
+            if (arrNo.indexOf(i)) {
+              x[i].classList.add("select-hide");
+            }
+          }
+        }
+        /*if the user clicks anywhere outside the select box,
+        then close all select boxes:*/
+        document.addEventListener("click", closeAllSelect);
+        </script>
+  
+  </div>
+
+ 
+
+    
+     
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+
+    <img class="backgroundimg"
+      src="images/1st.png"
+      height="1080px"
+      width="1920px"
+    />
+
+<!-- First Section -->
+
+    <div>
+      
+      <p id = "Chapter">CHAPTER 1</p>
+      <style>
+        #Chapter {
+          text-align:center;
+          margin-bottom: 5px;
+        }
+      </style>
+    
+      <h1 id="Me">About Me</h1>
+      <style>
+        #Me {
+          font-family: Lindsey Signature;
+          font-size: 50pt;
+          text-align: center;
+        }
+      </style>
+    </div>
+
+  
+
+    <div class="flex">
+      <div>
+        <h3 id="Guide">Your guide</h3>
+        <style>
+          #Guide {
+            font-family: Lindsey Signature;
+            font-size: 30pt;
+            margin-left: 80px;
+          }
+        </style>
+        <p id="paragraph">My name is Despina Ivanova (Desi). I have been living in Aarhus for some time now but I have not yet explored the beauty and mystery of the city. Join me on my journey while sharing with you all the interesting places I have discovered while strolling and eating Danish pastries.</p>
+        <style>
+          #paragraph {
+            font-weight: lighter;
+            font-size: 15pt;
+            margin-left: 80px;
+          }
+          </style>
+          <p id="read">READ MORE</p>
+          <style>
+            #read{ 
+              font-size: 15pt;
+              font-weight: bold;
+              margin-left: 80px;
+              margin-top: 30px;
+            }
+          </style>
+          <p id="arrow"><img src="/images/right-arrow(2).png" height="25px" weight="25px"></i></p>
+          <style>
+            #arrow {
+              margin-left: 125px;
+              margin-bottom: -100px ;
+             
+            }
+          </style>
+      </div>
+      <div><img src="/images/Component 25 – 1.png" height="600px" width="600px"></div>
+      </div>
+
+      <div>
+
+        <!-- Second Section -->
+      
+        <p id = "Chapter">CHAPTER 2</p>
+        <style>
+          #Chapter {
+            text-align:center;
+            margin-bottom: 5px;
+          }
+        </style>
+      
+        <h1 id="Me">About Aarhus</h1>
+        <style>
+          #Me {
+            font-family: Lindsey Signature;
+            font-size: 50pt;
+            text-align: center;
+          }
+        </style>
+      </div>
+
+     
+
+      <div class="container">
+        <div>
+          <h3 id="Guide">Aarhus - the city of smiles</h3>
+          <style>
+            #Guide {
+              font-family: Lindsey Signature;
+              font-size: 30pt;
+              margin-left: 80px;
+            }
+          </style>
+          <p id="paragraph">Aarhus is a city that has a lot to offer to everyone 
+            - from young to elderly. It is a city, as I like to call 
+            it, of diversity - from tiny Scandinavian houses 
+            defining the so-called ‘hygge’ to large modern 
+            buildings near the sea promenade. </p>
+          <style>
+            #paragraph {
+              font-weight: lighter;
+              font-size: 15pt;
+              margin-left: 80px;
+            }
+            </style>
+            <p id="read">READ MORE</p>
+            <style>
+              #read{ 
+                font-size: 15pt;
+                font-weight: bold;
+                margin-left: 80px;
+                margin-top: 30px;
+              }
+            </style>
+            <p id="arrow"><img src="/images/right-arrow(2).png" height="25px" width="25px"></p>
+            <style>
+              #arrow {
+                margin-left: 125px;
+                margin-bottom: -100px ;
+               
+              }
+            </style>
+        </div>
+        <div><img src="/images/aarhus.png" height="555.27px" width="855.21px"></div>
+        </div>
+  
+        
+       </div>
+
+       <!-- Third Section -->
+
+       <div>
+      
+        <p id = "Chapter">CHAPTER 3</p>
+        <style>
+          #Chapter {
+            text-align:center;
+            margin-bottom: 5px;
+          }
+        </style>
+      
+        <h1 id="Me">Hidden gems</h1>
+        <style>
+          #Me {
+            font-family: Lindsey Signature;
+            font-size: 50pt;
+            text-align: center;
+          }
+        </style>
+      </div>
+
+      <div class="flex-container">
+        <div><a href="#test"><img src="/images/Component 29 – 1.png" height="440px" width="440px"></a></div>
+         <div><a href="#test"><img src="/images/Component 27 – 1.png" height="440px" width="440px" alt=""></a></div>
+        <div><a href="#test"><img src="/images/Component 28 – 1.png" height="440px" width="440px" alt=""></a></div>  
+      </div>
+
+
+
+
+
+
+    <div class="flex-footer">
+      <div class="vertical-text">
+        <p>
+          Copyright 2022 | Despina Ivanova All rights reserved | Privacy policy
+          Terms and conditions
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="#test">About Me</a>
+
+        <a href="#test">About Aarhus</a>
+        <a href="#test">Explore</a>
+      </div>
+      <div class="footer-links">
+        <a href="#test">Forum</a>
+        <a href="#test">Settings</a>
+        <a href="#test">Help</a>
+      </div>
+      <div class="footer-links">
+        <a href="#test"><img src="/images/facebook(2).png" height="90px" width="90px" alt=""></a>
+      </div>
+      <div class="footer-links">
+        <a href="#test"><img src="/images/instagram(2).png" heigt="90px" width="90px" alt=""></a>
+      </div>
+    </div>
+  </body>
+</html>

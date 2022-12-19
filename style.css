@@ -3,7 +3,6 @@
      font-family: Montserrat;
      font-weight: lighter;
      background-color: #EBE5DD;
-
  }
 
  h1 {
@@ -35,9 +34,25 @@
     margin-left: 35%;
     margin-top: 2%;
  }
+ .me {
+    height:550px ;
+    width:250px ;
+ }
 
+ .aarhus {
+    height: 555.27px;
+    width: 855.21px;
+ }
 
+ .component {
+    height: 420px;
+    width: 420px;
+ }
 
+ .icons {
+    height: 90px;
+    width: 90px;
+ }
 
  /* top nav */
  .topnav {
@@ -264,8 +279,108 @@
          margin-top: 25px;
      }
 
+     .flex{
+        align-items: center;
+        display: flex;
+        flex-direction: column-reverse;
+
+     }
+     .flex>div {
+        padding: 0px;
+        margin: 0px;
+     }
+
+     .flex>div>p{
+        margin-left: 10px;
+     }
+.container>div>p{
+    padding: 0px;
+    margin: 0px;
+    
+}
+
+.container{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.me{
+    width: 120px;
+    height: 250px;
+}
+
+.paragraph{
+    font-size: 12px;
+    margin:5px;
+    text-align: center;
+    padding: 40px;
+}
+
+.aarhus {
+    height: 250px;
+    width: 290px;
+}
+
+h1{
+    font-size: 40pt;
+}
+h3{
+    margin: 0px;
+}
+
+.component {
+    height: 250px;
+    width: 250px;
+   
+}
+.icons {
+    height: 20px;
+    width: 20px;
+}
+
+.flex-footer {
+    display: flex;
+    background-color: #F8F6F7;
+
+    left: 0;
+    bottom: 0;
+    width: 90%;
+    color: black;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 5px;
+
+}
+
+.flex-footer .vertical-text {
+    width: 30%;
+    text-align: left;
+}
+
+
+.flex-footer .vertical-text p {
+    margin-top: 12%
+}
+
+.flex-footer .footer-links {
+    text-align: left;
+    width: 18%;
+    display: flex;
+    flex-direction: column;
+    background-color: #F8F6F7;
+    /* margin: 30px; */
+    padding: 40px 0px 40px 40px;
+    font-size: 5px;
+}
+
+.flex-footer .footer-links a {
+    font-size: 5px;
+
+}
+
+
      /* margin-left: 500px; */
- }
+ 
 
 
 
@@ -356,5 +471,4 @@
          min-height: 200px;
      }
  } */
-
 

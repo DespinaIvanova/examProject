@@ -253,6 +253,27 @@ h1 {
     .custom-select {
         margin-top: 25px;
     }
+    .h3{
+        font-size: 40pt;
+    }
+    .marselisborg{
+        font-size: 12px;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    .ph{
+        width: 280px;
+        height: 250px;
+        margin-left: 0px;
+     }
+     .flex-container>div{
+        padding: 0px;
+     }
+     .h4{
+        font-size: 10pt;
+        margin-left: 30px;
+     }
+     
 
     /* margin-left: 500px; */
 }
@@ -310,6 +331,27 @@ h1 {
     /* margin-bottom: 1000px; */
 }
 
+.flex-wrap{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+ }
+ @media screen and (max-width: 1000px) {
+    .flex-footer{
+        justify-content: space-around;
+    }
+    .flex-footer .footer-links {
+        padding: 20px 0px 20px 5px;
+    }
+    .flex-wrap{
+        flex-direction: column;
+        margin-left: 10px;
+     }
+     .icons {
+        height: 40px;
+        width: 40px;
+    }
+}
 
 
 

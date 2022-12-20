@@ -267,17 +267,17 @@ h1 {
 
      .marselisborg {
         font-size: 12px;
-        margin-left: 7px;
+       
      }
 
      .flex-container div img {
-        width: 280px;
-        height: 250px;
+        max-width: 280px;
+        max-height: 250px;
         margin-left: 0px
       }
 
       .flex-container>div{
-        margin-left: 0px;
+        margin-left: 20px;
       }
 
     /* margin-left: 500px; */
@@ -334,7 +334,29 @@ h1 {
     max-width: 100%;
     height: auto;
     /* margin-bottom: 1000px; */
+
 }
+.flex-wrap{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 1000px) {
+    .flex-footer{
+        justify-content: space-around;
+    }
+    .flex-footer .footer-links {
+        padding: 20px 0px 20px 5px;
+    }
+    .flex-wrap{
+        flex-direction: column;
+        margin-left: 10px;
+     }
+     .icons {
+        height: 40px;
+        width: 40px;
+    }
 
 
 

@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Aarhus Ø</title>
+    <meta name="description" content="Explore Aarhus Ø.">
+    <meta name=”robots” content="index, follow">
     <link rel="stylesheet" href="./aarhus.css" />
     <link
       rel="stylesheet"
@@ -16,6 +18,7 @@
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
     crossorigin=""></script>
+    <!-- CSS for Map -->
     <style>
       #map { height: 400px; }
       .arrowFlex {
@@ -28,7 +31,7 @@
 
       }
 
-     
+     /* Media Query */
       @media screen and (max-width: 1000px) {
           .read {
               margin-left: 0px;
@@ -44,11 +47,11 @@
     <!-- Menu: partly hidden or displayed -->
 
     <div class="topnav" id="myTopnav">
-      <a href="/404.html" class="active navbtn" id="home">About Me</a>
+      <a href="/404.html" class="navbtn" id="home">About Me</a>
       <a href="/404.html" class="navbtn">About Aarhus</a>
       <a href="/explore.html" class="navbtn">Explore</a>
       <a href="./home.html" class="logo">
-        <img src="images/logo.png"/>
+        <img src="images/logo.png" alt="Aarhus diaries by Desi"/>
       </a>
       <a href="/404.html" class="navbtn">Forum</a>
       <a href="/404.html" class="navbtn">Help</a>
@@ -62,6 +65,7 @@
       <a href="javascript:void(0);" class="icon navbtn" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
+      <!-- JS for Navigation Menu -->
       <script>
         var x, i, j, l, ll, selElmnt, a, b, c;
         /*look for any elements with the class "custom-select":*/
@@ -161,14 +165,16 @@
       }
     </script>
 
+<!-- Cover -->
     <img class="backgroundimg"
       src="/images/Component 35 – 1.png"
       height="1080px"
       width="1920px"
+      alt="Iceberg building in Aarhus Ø"
     />
 
     <div>
-    <h3 class="h3">The Scandinavian street</h3>
+    <h3 class="h3">Where the modern meets the sun</h3>
     <p class="marselisborg">I come from a place which is situated quite near the sea. I guess that’s the main reason for me loving the sea so much and find myself at peace while being near it. 
 
         I love the sound of the waves, the smell of the salty water and the blue colors. I believe that I am thankful for having the sea at my exposal whenever I want to, here in Aarhus. 
@@ -180,19 +186,34 @@
 Not only is there a sea promenade, but also plenty of astonishing buildings which you can see nowhere but there. Aarhus Ø gives you a different perspective of the city, making it even more diverse and colorful. 
 
 All the modern futuristic buildings dangling above the promenade, the boats on the harbor, the tiny basins used by many during summer time and the tiny restaurants and cafes is what make Aarhus Ø one of the hidden gems of Aarhus. 
-        </p>
+</p>
     </div>
 
     <div class="flex-container">
         <div>
-          <img src="/images/2.png">
+          <img src="/images/2.png" alt="The sun shining above the sea.">
         </div>
         <div>
-          <img src="/images/4.png">
+          <img src="/images/4.png" alt="The harbour surrounded by modern buildings.">
         </div>
         <div>
-          <img src="/images/7.png">
-        </div>  
+          <img src="/images/7.png" alt="The sun shining above the sea near a modern building.">
+        </div></div>
+      </div>
+
+      <div>
+
+        <p class="marselisborg">
+          I remember taking the bus (23) from <a href=" https://www.google.com/maps/dir/Emil+Vetts+Passage,+8000+Aarhus/Nikoline+Kochs+Plads,+%D0%9E%D1%80%D1%85%D1%83%D1%81/@56.1608917,10.2032635,15z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x464c3f93f5f74ff9:0x86f80928b7af219c!2m2!1d10.2055156!2d56.1570113!1m5!1m1!1s0x464c3fa3a94d961b:0x11c990eeb8f4aa4b!2m2!1d10.2227595!2d56.1645248!3e0" >"Emil Vetts Passage (Aarhus Kom)" to "Nikoline Kochs Plads (Aarhus Kom)."</a> Once I got off the bus I headed to the sea. I felt entirely happy once I noticed it and the sun shining right above it making it look even more stunning. 
+          
+          The buildings there would contribute to the picturesque view. Even though, it was freezing cold because of the breeze I kept walking enjoying Arhus Ø with all the modern outstanding buildings such as the famous ‘Iceberg’ building. 
+          
+          The vibrancy of the place adds up to the beauty of Aarhus and its diversity. If you want to experience Aarhus as it is, adding Aarhus Ø to places-to-visit is the best decision you would make!
+          </p>
+
+          <h4 class="h4">Published on 17/12/2022, 16:30</h4>
+      
+
       </div>
   
 
@@ -205,7 +226,7 @@ All the modern futuristic buildings dangling above the promenade, the boats on t
 
   // initialize the map on the "map" div with a given center and zoom
 
-
+// JS for Map
   var map = L.map('map').setView([56.14309036877043, 10.23206226149911], 16);
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,

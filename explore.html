@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Explore Aarhus</title>
+    <meta name="description" content="Explore the hidden gems of Aarhus." />
+    <meta name="”robots”" content="index, follow" />
     <link rel="stylesheet" href="./explore.css" />
     <link
       rel="stylesheet"
@@ -12,47 +14,46 @@
     />
     <style>
       .arrowFlex {
-          display: flex;
+        display: flex;
       }
 
       .arrow {
-          margin-left: 125px;
-          margin-bottom: -100px;
-
+        margin-left: 125px;
+        margin-bottom: -100px;
       }
 
       .read {
-          font-size: 15pt;
-          font-weight: bold;
-          margin-left: 80px;
-          margin-top: 30px;
+        font-size: 15pt;
+        font-weight: bold;
+        margin-left: 80px;
+        margin-top: 30px;
       }
 
       .Chapter {
-          text-align: center;
-          margin-bottom: 5px;
+        text-align: center;
+        margin-bottom: 5px;
       }
 
       .Me {
-          font-family: Lindsey Signature;
-          font-size: 50pt;
-          text-align: center;
+        font-family: Lindsey Signature;
+        font-size: 50pt;
+        text-align: center;
       }
 
       .Guide {
-          font-family: Lindsey Signature;
-          font-size: 30pt;
-          margin-left: 80px;
+        font-family: Lindsey Signature;
+        font-size: 30pt;
+        margin-left: 80px;
       }
-
+      /* Media Query */
       @media screen and (max-width: 1000px) {
-          .read {
-              margin-left: 0px;
-          }
+        .read {
+          margin-left: 0px;
+        }
 
-          .arrow {
-              margin-left: 5px;
-          }
+        .arrow {
+          margin-left: 5px;
+        }
       }
     </style>
   </head>
@@ -60,24 +61,25 @@
     <!-- Menu: partly hidden or displayed -->
 
     <div class="topnav" id="myTopnav">
-      <a href="/404.html" class="active navbtn" id="home">About Me</a>
+      <a href="/404.html" class="navbtn" id="home">About Me</a>
       <a href="/404.html" class="navbtn">About Aarhus</a>
       <a href="/explore.html" class="navbtn">Explore</a>
       <a href="/home.html" class="logo">
-        <img src="images/logo.png"/>
+        <img src="images/logo.png" />
       </a>
       <a href="/404.html" class="navbtn">Forum</a>
       <a href="/404.html" class="navbtn">Help</a>
-      <div class="custom-select" style="width:120px;">
-      <select name="Lannguages" id="languages">
-        <option value="EN">English</option>
-        <option value="EN">English</option>
-        <option value="DK">Danish</option>
-      </select>
-    </div>
+      <div class="custom-select" style="width: 120px">
+        <select name="Lannguages" id="languages">
+          <option value="EN">English</option>
+          <option value="EN">English</option>
+          <option value="DK">Danish</option>
+        </select>
+      </div>
       <a href="javascript:void(0);" class="icon navbtn" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
+      <!-- JS Navigation Menu -->
       <script>
         var x, i, j, l, ll, selElmnt, a, b, c;
         /*look for any elements with the class "custom-select":*/
@@ -99,51 +101,57 @@
             create a new DIV that will act as an option item:*/
             c = document.createElement("DIV");
             c.innerHTML = selElmnt.options[j].innerHTML;
-            c.addEventListener("click", function(e) {
-                /*when an item is clicked, update the original select box,
+            c.addEventListener("click", function (e) {
+              /*when an item is clicked, update the original select box,
                 and the selected item:*/
-                var y, i, k, s, h, sl, yl;
-                s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-                sl = s.length;
-                h = this.parentNode.previousSibling;
-                for (i = 0; i < sl; i++) {
-                  if (s.options[i].innerHTML == this.innerHTML) {
-                    s.selectedIndex = i;
-                    h.innerHTML = this.innerHTML;
-                    y = this.parentNode.getElementsByClassName("same-as-selected");
-                    yl = y.length;
-                    for (k = 0; k < yl; k++) {
-                      y[k].removeAttribute("class");
-                    }
-                    this.setAttribute("class", "same-as-selected");
-                    break;
+              var y, i, k, s, h, sl, yl;
+              s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+              sl = s.length;
+              h = this.parentNode.previousSibling;
+              for (i = 0; i < sl; i++) {
+                if (s.options[i].innerHTML == this.innerHTML) {
+                  s.selectedIndex = i;
+                  h.innerHTML = this.innerHTML;
+                  y =
+                    this.parentNode.getElementsByClassName("same-as-selected");
+                  yl = y.length;
+                  for (k = 0; k < yl; k++) {
+                    y[k].removeAttribute("class");
                   }
+                  this.setAttribute("class", "same-as-selected");
+                  break;
                 }
-                h.click();
+              }
+              h.click();
             });
             b.appendChild(c);
           }
           x[i].appendChild(b);
-          a.addEventListener("click", function(e) {
-              /*when the select box is clicked, close any other select boxes,
+          a.addEventListener("click", function (e) {
+            /*when the select box is clicked, close any other select boxes,
               and open/close the current select box:*/
-              e.stopPropagation();
-              closeAllSelect(this);
-              this.nextSibling.classList.toggle("select-hide");
-              this.classList.toggle("select-arrow-active");
-            });
+            e.stopPropagation();
+            closeAllSelect(this);
+            this.nextSibling.classList.toggle("select-hide");
+            this.classList.toggle("select-arrow-active");
+          });
         }
         function closeAllSelect(elmnt) {
           /*a function that will close all select boxes in the document,
           except the current select box:*/
-          var x, y, i, xl, yl, arrNo = [];
+          var x,
+            y,
+            i,
+            xl,
+            yl,
+            arrNo = [];
           x = document.getElementsByClassName("select-items");
           y = document.getElementsByClassName("select-selected");
           xl = x.length;
           yl = y.length;
           for (i = 0; i < yl; i++) {
             if (elmnt == y[i]) {
-              arrNo.push(i)
+              arrNo.push(i);
             } else {
               y[i].classList.remove("select-arrow-active");
             }
@@ -157,14 +165,8 @@
         /*if the user clicks anywhere outside the select box,
         then close all select boxes:*/
         document.addEventListener("click", closeAllSelect);
-        </script>
-  
-  </div>
-
- 
-
-    
-     
+      </script>
+    </div>
 
     <script>
       function myFunction() {
@@ -177,28 +179,52 @@
       }
     </script>
 
-    <img class="backgroundimg"
+    <img
+      class="backgroundimg"
       src="/images/Component 36 – 1.png"
       height="1080px"
       width="1920px"
+      alt="Collage of hidden gems in Aarhus."
     />
 
-        
+    <div>
+      <h1 class="h1">Hidden gems</h1>
+    </div>
 
+    <div class="flex-container">
       <div>
-        <h1 class="h1">Hidden gems</h1>
+        <a href="./marselisborg.html"
+          ><img
+            src="/images/Component 29 – 1.png"
+            class="component"
+            height="420px"
+            width="420px"
+            alt="Marselisborg Castle"
+        /></a>
       </div>
-
-      <div class="flex-container">
-        <div><a href="./marselisborg.html"><img src="/images/Component 29 – 1.png" class="component" height="420px" width="420px"></a></div>
-         <div><a href="./mollestien.html"><img src="/images/Component 27 – 1.png" class="component" height="420px" width="420px" alt=""></a></div>
-        <div><a href="./aarhus.html"><img src="/images/Component 28 – 1.png" class="component" height="420px" width="420px" alt=""></a></div>  
+      <div>
+        <a href="./mollestien.html"
+          ><img
+            src="/images/Component 27 – 1.png"
+            class="component"
+            height="420px"
+            width="420px"
+            alt="Colorful houses in Møllestien"
+        /></a>
       </div>
- 
+      <div>
+        <a href="./aarhus.html"
+          ><img
+            src="/images/Component 28 – 1.png"
+            class="component"
+            height="420px"
+            width="420px"
+            alt="Iceberg building in Aarhus Ø"
+        /></a>
+      </div>
+    </div>
 
-
-
-
+    <!-- Footer -->
 
     <div class="flex-footer">
       <div class="vertical-text">
@@ -220,11 +246,25 @@
       </div>
       <div class="footer-links">
         <div class="flex-wrap">
-      <a href="#test"><img class="icons" src="/images/facebook(2).png" height="90px" width="90px" alt=""></a>
-      </div>
-      <div class="footer-links">
-        <a href="#test"><img class="icons" src="/images/instagram(2).png" heigt="90px" width="90px" alt=""></a>
-      </div>
+          <a href="#test"
+            ><img
+              class="icons"
+              src="/images/facebook(2).png"
+              height="90px"
+              width="90px"
+              alt=""
+          /></a>
+        </div>
+        <div class="footer-links">
+          <a href="#test"
+            ><img
+              class="icons"
+              src="/images/instagram(2).png"
+              heigt="90px"
+              width="90px"
+              alt=""
+          /></a>
+        </div>
       </div>
     </div>
   </body>

@@ -1,13 +1,13 @@
 body {
     margin: 0;
-    font-family: Montserrat;
+    font-family: "montserrat";
     font-weight: lighter;
     background-color: #EBE5DD;
 
 }
 
 h1 {
-   font-family: Lindsey Signature;
+   font-family: "lindsey signature";
    text-align: center;
    font-size: 50pt;
 }
